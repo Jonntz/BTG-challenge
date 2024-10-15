@@ -13,4 +13,12 @@ public class OrderCreatedEventFactory {
 
     return event;
   }
+
+  public static OrderCreatedEvent buildWithListOfItems(){
+    var item = new OrderItemEvent("notebook", 1, BigDecimal.valueOf(20.50));
+    var item2 = new OrderItemEvent("mouse", 1, BigDecimal.valueOf(45.50));
+    var event = new OrderCreatedEvent(1L, 2L, List.of(item, item2));
+
+    return event;
+  }
 }

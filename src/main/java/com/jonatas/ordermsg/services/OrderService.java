@@ -48,6 +48,7 @@ public class OrderService {
   }
 
   
+  @SuppressWarnings("null")
   public BigDecimal findTotalOnOrdersByCostumerId(Long costumerId){
     var aggregations = newAggregation(
        match(Criteria.where("costumerId").is(costumerId)),
